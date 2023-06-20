@@ -1,0 +1,36 @@
+import pandas as pd			#the norm is to import pandas as pd
+
+read_csv('file name and location')	#import in data if csv file		USE r before '' and use \
+
+head(number)				#head and tail brings you data from upper most or bottom most
+tail(number)
+
+delimiter = '\t'			#seperates data the way you want it (could be any letter like x or (space bar) )
+
+ascending = False			#descending
+
+******now to print SPECIFIC INFORMATION*******
+
+print(temp['Name'])			#what this does is it checks temp and prints only the name collumn
+
+print(temp[['Name','age','height']])	#multiple information.. 2 of these []
+
+print(temp.iloc[1:2])			#prints specific rows
+print(temp.iloc[1,2])			#prints row and collumn
+
+print(temp.sort_values('Name'))		#print name in alphabetical order	
+print(temp.sort_values(['Name','HP'] , ascending=[1,0]))	
+
+print(temp.loc[temp['Name'] == 'Spiderman'] )			#loc can be ignored            PRINTS SPECIFIC ROW/ROWS
+print(temp.loc[temp['Name'].str.contains('Mega')]) 		#now we can find all rows that contain those strings
+print(temp.loc[temp['Name'].str.contains('Me[a-f]')])		#what prints next must be Me and the rest must be within c-f
+
+********USING SPECIFIC INFORMATION*********
+temp['HS'] = temp['HP'] + temp['Speed']				#make a new collumn that holds information from adding other specific collumns
+temp = temp.drop(columns = ['HS'])				#delete column
+
+temp.to_csv('newModifiedVersion.csv')				#save this temp version as a new file on its own
+
+***************IGNORE CAPS**********************
+import re
+re.I								#ignores case

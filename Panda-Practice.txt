@@ -1,0 +1,28 @@
+
+import pandas as pd
+
+md = pd.read_csv(r'C:\Users\Home\Downloads\pokemon_data.csv')             #md stands for marvel data
+
+
+#print(md[['Name','Speed']])
+
+
+#x = int(input("Welcome! tell us which row and collumn you would like to see"))
+#y = int(input())
+#print(md.iloc[x,y])
+
+
+#while True:
+#   word = input("Welcome! tell us which name you are looking for and we will tell you if it exists")
+#   print(md[md['Name'] == word])                                                                       #prints specific row
+
+
+#print(md.sort_values(['Name','Speed'] , ascending = [1,0]) )
+
+
+#md['HS'] = md['HP'] + md['Speed']
+#print(md)
+
+
+#print(md[md['Name'].str.contains('Ch')])
+print(md[md['Name'].str.contains('Ch[d-f]')])
